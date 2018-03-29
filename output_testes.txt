@@ -1,0 +1,309 @@
+
+====================== Working with Oil data ====================== 
+
+
+	Runs Test
+
+data:  v_ts
+statistic = -21.572, runs = 8, n1 = 246, n2 = 246, n = 492, p-value <
+2.2e-16
+alternative hypothesis: nonrandomness
+
+
+	Cox Stuart test
+
+data:  v_ts
+statistic = 220, n = 246, p-value < 2.2e-16
+alternative hypothesis: non randomness
+
+
+	Mann-Kendall Rank Test
+
+data:  v_ts
+statistic = 19.011, n = 492, p-value < 2.2e-16
+alternative hypothesis: trend
+
+
+	Kruskal-Wallis rank sum test
+
+data:  as.matrix(v_ts) by as.integer(month)
+Kruskal-Wallis chi-squared = 0.82847, df = 11, p-value = 1
+
+
+	Friedman rank sum test
+
+data:  v_ts, as.factor(year) and as.factor(month)
+Friedman chi-squared = 461.03, df = 40, p-value < 2.2e-16
+
+
+############################################### 
+# Augmented Dickey-Fuller Test Unit Root Test # 
+############################################### 
+
+Test regression none 
+
+
+Call:
+lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-17.1650  -0.5085   0.1068   0.9321  12.3185 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+z.lag.1    -0.004316   0.002966  -1.455    0.146    
+z.diff.lag  0.539419   0.039609  13.619   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.832 on 488 degrees of freedom
+Multiple R-squared:  0.2756,	Adjusted R-squared:  0.2726 
+F-statistic: 92.83 on 2 and 488 DF,  p-value: < 2.2e-16
+
+
+Value of test-statistic is: -1.455 
+
+Critical values for test statistics: 
+      1pct  5pct 10pct
+tau1 -2.58 -1.95 -1.62
+
+
+################################## 
+# Phillips-Perron Unit Root Test # 
+################################## 
+
+Test regression with intercept 
+
+
+Call:
+lm(formula = y ~ y.l1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-24.9553  -0.7640  -0.1163   0.8062  12.7820 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 0.325637   0.227506   1.431    0.153    
+y.l1        0.992991   0.005266 188.554   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.316 on 489 degrees of freedom
+Multiple R-squared:  0.9864,	Adjusted R-squared:  0.9864 
+F-statistic: 3.555e+04 on 1 and 489 DF,  p-value: < 2.2e-16
+
+
+Value of test-statistic, type: Z-tau  is: -1.9203 
+
+         aux. Z statistics
+Z-tau-mu            1.7399
+
+Critical values for Z statistics: 
+                     1pct      5pct     10pct
+critical values -3.445839 -2.867711 -2.570047
+
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 5 lags. 
+
+Value of test-statistic is: 1.4553 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
+
+[1] "Lambda = -0.013131133645514"
+Series: v_ts 
+ARIMA(1,1,0)                    
+
+Coefficients:
+         ar1
+      0.5340
+s.e.  0.0394
+
+sigma^2 estimated as 8.02:  log likelihood=-1207.47
+AIC=2418.93   AICc=2418.96   BIC=2427.33
+
+====================== Working with CO2 data ====================== 
+
+
+	Runs Test
+
+data:  v_ts
+statistic = -21.345, runs = 10, n1 = 245, n2 = 245, n = 490, p-value <
+2.2e-16
+alternative hypothesis: nonrandomness
+
+
+	Cox Stuart test
+
+data:  v_ts
+statistic = 246, n = 246, p-value < 2.2e-16
+alternative hypothesis: non randomness
+
+
+	Mann-Kendall Rank Test
+
+data:  v_ts
+statistic = 30.834, n = 492, p-value < 2.2e-16
+alternative hypothesis: trend
+
+
+	Kruskal-Wallis rank sum test
+
+data:  as.matrix(v_ts) by as.integer(month)
+Kruskal-Wallis chi-squared = 4.2114, df = 11, p-value = 0.9633
+
+
+	Friedman rank sum test
+
+data:  v_ts, as.factor(year) and as.factor(month)
+Friedman chi-squared = 480, df = 40, p-value < 2.2e-16
+
+
+############################################### 
+# Augmented Dickey-Fuller Test Unit Root Test # 
+############################################### 
+
+Test regression none 
+
+
+Call:
+lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.29820 -0.70498  0.01806  0.63151  2.16533 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+z.lag.1    0.0001063  0.0001139   0.934    0.351    
+z.diff.lag 0.7028689  0.0322441  21.798   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9064 on 488 degrees of freedom
+Multiple R-squared:  0.4992,	Adjusted R-squared:  0.4972 
+F-statistic: 243.2 on 2 and 488 DF,  p-value: < 2.2e-16
+
+
+Value of test-statistic is: 0.9338 
+
+Critical values for test statistics: 
+      1pct  5pct 10pct
+tau1 -2.58 -1.95 -1.62
+
+
+################################## 
+# Phillips-Perron Unit Root Test # 
+################################## 
+
+Test regression with intercept 
+
+
+Call:
+lm(formula = y ~ y.l1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.7276 -1.1949  0.4314  1.0578  1.9862 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 0.511092   1.036253   0.493    0.622    
+y.l1        0.998977   0.002864 348.746   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.273 on 489 degrees of freedom
+Multiple R-squared:  0.996,	Adjusted R-squared:  0.996 
+F-statistic: 1.216e+05 on 1 and 489 DF,  p-value: < 2.2e-16
+
+
+Value of test-statistic, type: Z-tau  is: -0.6819 
+
+         aux. Z statistics
+Z-tau-mu            0.7828
+
+Critical values for Z statistics: 
+                     1pct      5pct     10pct
+critical values -3.445839 -2.867711 -2.570047
+
+
+####################### 
+# KPSS Unit Root Test # 
+####################### 
+
+Test is of type: tau with 5 lags. 
+
+Value of test-statistic is: 1.0251 
+
+Critical value for a significance level of: 
+                10pct  5pct 2.5pct  1pct
+critical values 0.119 0.146  0.176 0.216
+
+[1] "Lambda = 1.06948834369665"
+Series: v_ts 
+ARIMA(0,1,1)(2,1,0)[12]                    
+
+Coefficients:
+          ma1     sar1     sar2
+      -0.4511  -0.6385  -0.2748
+s.e.   0.0421   0.0444   0.0453
+
+sigma^2 estimated as 0.1086:  log likelihood=-142.54
+AIC=293.08   AICc=293.16   BIC=309.76
+
+====================== Working with both data ====================== 
+
+
+Autocorrelations of series ‘X’, by lag
+
+   -23    -22    -21    -20    -19    -18    -17    -16    -15    -14    -13 
+-0.089 -0.019  0.056  0.105  0.076  0.030 -0.045 -0.102 -0.086 -0.076 -0.088 
+   -12    -11    -10     -9     -8     -7     -6     -5     -4     -3     -2 
+-0.054 -0.012  0.064  0.104  0.080  0.040  0.017 -0.035  0.002  0.018  0.020 
+    -1      0      1      2      3      4      5      6      7      8      9 
+ 0.004  0.000 -0.058 -0.052 -0.082 -0.030  0.025  0.068  0.089  0.055  0.001 
+    10     11     12     13     14     15     16     17     18     19     20 
+-0.036 -0.062 -0.050  0.015  0.032  0.045  0.040  0.011 -0.016 -0.030 -0.032 
+    21     22     23 
+-0.016 -0.024 -0.011 
+[1] "Best lag: Lag2"
+[1] "Model without regressor"
+Series: y_ts_obs 
+ARIMA(0,1,1)(2,1,0)[12]                    
+
+Coefficients:
+          ma1     sar1     sar2
+      -0.4511  -0.6385  -0.2748
+s.e.   0.0421   0.0444   0.0453
+
+sigma^2 estimated as 0.1086:  log likelihood=-142.54
+AIC=293.08   AICc=293.16   BIC=309.76
+[1] "Model with regressor"
+Series: y_ts_obs 
+ARIMA(3,0,1)(2,1,0)[12] with drift         
+
+Coefficients:
+         ar1     ar2     ar3      ma1     sar1     sar2   drift     xreg
+      0.8219  0.0272  0.1138  -0.2640  -0.6247  -0.2642  0.1419  -0.0007
+s.e.  0.2010  0.1288  0.0828   0.2008   0.0454   0.0461  0.0123   0.0029
+
+sigma^2 estimated as 0.1077:  log likelihood=-139.53
+AIC=297.07   AICc=297.45   BIC=334.63
+
+	Box-Ljung test
+
+data:  fit$residuals
+X-squared = 29.008, df = 28, p-value = 0.4121
+
+                ME      RMSE       MAE       MPE      MAPE      ACF1 Theil's U
+Test set 0.6471687 0.9641285 0.7640267 0.1599649 0.1891898 0.6935926  0.635864
+               ME     RMSE      MAE       MPE     MAPE      ACF1 Theil's U
+Test set 1.039755 1.351092 1.076867 0.2573567 0.266635 0.7595022 0.8915788
