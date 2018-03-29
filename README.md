@@ -1,5 +1,5 @@
 # ts_analysis
-Main functions to Time Series analysis
+Main functions to Time Series analysis in R
 
 Execute analysis.R like:
 ./analysis.R > output_ex.txt (needs chmod +x analysis.R before)
